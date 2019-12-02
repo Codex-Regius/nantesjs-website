@@ -6,8 +6,9 @@ import { MeetupsLink } from './MeetupsLink'
 import { Logo } from './Logo'
 import { LargeContainer } from '../../components/LargeContainer'
 import { SocialIcons } from '../SocialIcons'
-
+import { ConnexionLink } from './ConnexionLink'
 import styles from './Header.module.css'
+
 
 export function Header () {
   // eslint-disable-next-line max-len
@@ -20,6 +21,7 @@ export function Header () {
           <div className={styles.header__links}>
             <SocialIcons className={styles.menu__socialIcons} />
             <Menu>
+              <ConnexionLink/>
               <MeetupsLink />
               <ContributorsLink />
               <AboutLink />
