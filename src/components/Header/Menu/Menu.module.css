@@ -45,6 +45,10 @@
   margin-bottom: 10px;
 }
 
+.showOnDesktop {
+  flex: 1;
+}
+
 @media screen and (min-width: 992px) {
   .hideOnDesktop {
     display: none;

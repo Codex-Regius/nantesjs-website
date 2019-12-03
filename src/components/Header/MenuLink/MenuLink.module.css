@@ -16,3 +16,9 @@
 .menu__link--selected {
   border-bottom: 3px solid #f3e049;
 }
+
+@media screen and (max-width: 991px){
+  .menu__link--selected{
+    margin-right: 10%;
+  }
+}
