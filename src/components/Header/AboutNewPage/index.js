@@ -1,1 +1,0 @@
-export { AboutNewPage } from './AboutNewPage'
