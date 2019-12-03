@@ -1,23 +1,16 @@
+.allPage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .title{
   font-size: 350%;
 }
 
 .picture{
   height: 250px;
-}
-
-.button{
-  display: flex;
-  flex-direction: column;
-  width: 120px;
-  margin: 5px;
-}
-
-.allPage{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .iconAndSignIn{

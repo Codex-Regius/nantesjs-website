@@ -1,20 +1,19 @@
 import React, {useEffect, useState, Fragment} from 'react'
-import { Picture } from '../components/Picture'
 import Layout from '../components/layout'
-import { SocialLinks } from '../components/SocialLinks'
 import styles from './page-connexion.module.css';
-import iconConnexion from './iconConnexion.png'
 import firebase from 'firebase';
+import Profil from './profil';
+import iconConnexion from './iconConnexion.png';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 firebase.initializeApp({
   apiKey: "AIzaSyAZhYVFTXLNrcQBi7qK9Gr-ZbGNHfpAtwE",
   authDomain: "testfirebase-ca33c.firebaseapp.com",
-})
+});
 
 export default function PageConnexion () {
 
-  const [connect, setConnect] = useState(false)
+  const [connect, setConnect] = useState(false);
   let uiConfig = {
     signInFlow: 'popup',
     signInOptions: [
@@ -25,7 +24,6 @@ export default function PageConnexion () {
     signInSuccess: () => false
     }
   }
-
   useEffect(()=>{
     firebase.auth().onAuthStateChanged(user => {
       setConnect(!!user) 
@@ -37,11 +35,7 @@ export default function PageConnexion () {
     <Layout>
       <div className={styles.allPage}>
        {connect ?(
-        <div>
-          <h1>Hello {firebase.auth().currentUser.displayName}</h1>
-          <img src={firebase.auth().currentUser.photoURL} alt=""/>
-          <button onClick={() => firebase.auth().signOut()}>Sign out</button>
-        </div>
+        <Profil/>
         ) : (
           <Fragment>
             <h1 className={styles.title}>Connexion</h1>
@@ -58,7 +52,8 @@ export default function PageConnexion () {
               />
             </div>
           </Fragment>
-      )}
+            )
+        }
       </div>
     </Layout>
   )
