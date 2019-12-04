@@ -7,11 +7,6 @@ import Fusee from '../../static/images/Fusee.png';
 import Smiley from '../../static/images/Smiley.png';
 import QrReader from 'react-qr-reader'
 
-firebase.initializeApp({
-  apiKey: "AIzaSyAZhYVFTXLNrcQBi7qK9Gr-ZbGNHfpAtwE",
-  authDomain: "testfirebase-ca33c.firebaseapp.com",
-});
-
 export default function Profil() {
 
   const [result, setResult] = useState('Nothing');
