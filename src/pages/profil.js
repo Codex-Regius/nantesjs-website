@@ -7,12 +7,17 @@ import Fusee from '../../static/images/Fusee.png';
 import Smiley from '../../static/images/Smiley.png';
 import QrReader from 'react-qr-reader'
 
+firebase.initializeApp({
+  apiKey: "AIzaSyAZhYVFTXLNrcQBi7qK9Gr-ZbGNHfpAtwE",
+  authDomain: "testfirebase-ca33c.firebaseapp.com",
+});
 
 export default function Profil() {
 
-  const [result, setResult] = useState('No result');
- 
+  const [result, setResult] = useState('Nothing');
+
   let handleScan = data => {
+    console.log(data)
     if (data) {
       setResult(data)
       }
@@ -28,6 +33,14 @@ export default function Profil() {
     setIsHere(!isHere)
   }
 
+  let testSend=()=>{
+    firebase.database().ref('/test_meetup').push({
+      name:"meetup1",
+      id:'1',
+      data: 'data'
+    })
+    console.log('send')
+  }
 
   return (
     <div className={styles.profilPage}>
@@ -45,6 +58,13 @@ export default function Profil() {
           <img src={QRCode} alt="QRCode" className={styles.QRCodeImage}/>
           <button className={styles.QRCodeButton} onClick={handleClick}>Scanner un QRCode</button>
         </div>
+        {
+          result === 'meetup' ? 
+          <div>
+            <h1>MEETUP</h1>
+            <button className={styles.QRCodeButton2} onClick={handleClick}>Retour</button>
+          </div>
+          :
         <div className={isHere ? styles.cameraOn : styles.cameraOff}>
           <QrReader 
             delay={300}
@@ -52,11 +72,10 @@ export default function Profil() {
             onScan={handleScan}
           />
           <p>{result}</p>
+          <button className={styles.QRCodeButton2} onClick={testSend}>test</button>
           <button className={styles.QRCodeButton2} onClick={handleClick}>Retour</button>
-
         </div>
-        
-
+        }
         <div className={styles.fusee}>
           <img src={Fusee} alt="Fusee" className={styles.fuseeImage}/>
           <button className={styles.badgesButton} >Voir mes badges</button>

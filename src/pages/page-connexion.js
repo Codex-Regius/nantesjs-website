@@ -5,8 +5,6 @@ import firebase from 'firebase';
 import Profil from './profil';
 import iconConnexion from './iconConnexion.png';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import QRScanner from 'qr-code-scanner';
-
 
 firebase.initializeApp({
   apiKey: "AIzaSyAZhYVFTXLNrcQBi7qK9Gr-ZbGNHfpAtwE",
