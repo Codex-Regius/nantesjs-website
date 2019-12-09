@@ -6,11 +6,6 @@ import Profil from './profil';
 import iconConnexion from './iconConnexion.png';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
-firebase.initializeApp({
-  apiKey: "AIzaSyAZhYVFTXLNrcQBi7qK9Gr-ZbGNHfpAtwE",
-  authDomain: "testfirebase-ca33c.firebaseapp.com",
-});
-
 export default function PageConnexion () {
 
   const [connect, setConnect] = useState(false);
