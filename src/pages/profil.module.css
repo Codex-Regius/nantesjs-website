@@ -4,34 +4,36 @@
   justify-content: center;
 }
 
-.profilImage{
+.ImageAndName__profilImage{
   width: 15%;
   border-radius: 100%;
 }
 
-.ImageAndName{
+.profilPage__ImageAndName{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 2%;
 }
 
-.ImageAndName h1{
+.profilPage__ImageAndName h1{
   margin-left: 10px;
 }
 
-.profilPage>p{
+.profilPage p{
   width: 80%;
-  margin: auto;
+  margin: 15px auto;
+  text-align: center;
 }
 
-.signOut{
-  padding: 10px;
-  background-color: #f3e049;
-  width: 30%;
-  margin: 20px auto;
+.profilPage__badgesAndProfil{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
 }
-.QRCodeDiv{
+
+
+.profilPage__QRCodeDiv{
   background-color: gainsboro;
   padding: 10px;
   flex-direction: column;
@@ -41,39 +43,35 @@
   margin-top: 20px;
 }
 
-.QRCodeButton{
+.QRCodeDiv__QRCodeButton{
   background-color: #f3e049;
   padding: 10px;
   width: 200px;
   margin: 20px auto;
 }
 
-.QRCodeImage{
+.QRCodeDiv__QRCodeImage{
   margin-top: 20px;
   width: 50%;
 }
 
-.fusee{
+.QRCodeDiv__fusee{
   display: none;
 }
 
-.smiley{
+.QRCodeDiv__smiley{
   display: none;
 }
 
-.badgesAndProfil{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
 
-.profilButton{
+
+.badgesAndProfil__profilButton, .smiley__profilButton{
   background-color: #f3e049;
   padding: 4px;
   width: 150px;
 }
 
-.badgesButton{
+.badgesAndProfil__badgesButton, .fusee_badgesButton{
   background-color: #f3e049;
   padding: 4px;
   width: 150px;
@@ -93,18 +91,18 @@
   text-align: center;
 }
 
-.QRCodeImgOn{
+.QRCodeDiv__QRCodeImgOn{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.QRCodeImgOff{
+.QRCodeDiv__QRCodeImgOff{
   display : none;
 }
 
-.QRCodeButton2{
+.QRCodeDiv__QRCodeButton2{
   display: block;
   background-color: #f3e049;
   padding: 10px;
@@ -113,70 +111,78 @@
 }
 
 @media screen and (min-width: 991px){
-  .QRCodeDiv{
+  .profilPage__QRCodeDiv{
     flex-direction: row;
     height: 200px;
-    display: block;
+    display: flex;
   }
 
   .cameraOff{
     display: none !important;
   }
 
-  .badgesAndProfil{
+  .profilPage__badgesAndProfil{
     display: none;
   }
 
-  .QRCodeButton{
+  .QRCodeDiv__QRCodeButton{
     display: none;
   }
   
-  .QRCodeImage{
+  .QRCodeDiv__QRCodeImage{
     display: none;
   }
 
-  .ImageAndName{
+  .profilPage__ImageAndName{
     margin-top: 2%;
     justify-content: flex-start;
   }
 
-  .profilImage{
+  .ImageAndName__profilImage{
     width: 10%;
     border-radius: 100%;
   }
 
-  .fusee{
+  .QRCodeDiv__fusee{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .fuseeImage{
+  .fusee__fuseeImage{
     width: 30%;
   }
 
-  .badgesButton{
+  .fusee__badgesButton{
     background-color: #f3e049;
     padding: 4px;
     width: 150px;
     margin-top: 20px;
   }
 
-  .smiley{
+  .QRCodeDiv__smiley{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .smileyImage{
+  .smiley__smileyImage{
     width: 30%;
   }
 
-  .profilButton{
+  .smiley__profilButton{
     background-color: #f3e049;
     padding: 4px;
     width: 150px;
     margin-top: 20px;
   }
 
+}
+
+
+.profilPage__signOut{
+  padding: 10px;
+  background-color: #f3e049;
+  width: 30%;
+  margin: 20px auto;
 }

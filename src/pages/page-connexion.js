@@ -29,24 +29,25 @@ export default function PageConnexion () {
   return (
     <Layout>
       <div className={styles.allPage}>
-       {connect ?(
-        <Profil/>
-        ) : (
-          <Fragment>
-            <h1 className={styles.title}>Connexion</h1>
-            <h3 className={styles.title2}>Connectez-vous pour participer au tirage au sort à chaque Meetup !</h3>
-            <div className={styles.iconAndSignIn}>
-              <img 
-              src= {iconConnexion}
-              alt='icon for illustrate a connexion'
-              className={styles.picture}
-              />
-              <StyledFirebaseAuth
-              uiConfig={uiConfig}
-              firebaseAuth={firebase.auth()}
-              />
-            </div>
-          </Fragment>
+        {
+          connect ? (
+            <Profil />
+          ) : (
+              <Fragment>
+                <h1 className={styles.allPage__title}>Connexion</h1>
+                <h3 className={styles.allPage__title2}>Connectez-vous pour participer au tirage au sort à chaque Meetup !</h3>
+                <div className={styles.allPage__iconAndSignIn}>
+                  <img
+                    src={iconConnexion}
+                    alt='icon for illustrate a connexion'
+                    className={styles.allPage__picture}
+                  />
+                  <StyledFirebaseAuth
+                    uiConfig={uiConfig}
+                    firebaseAuth={firebase.auth()}
+                  />
+                </div>
+              </Fragment>
             )
         }
       </div>
